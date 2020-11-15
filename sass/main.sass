@@ -1,0 +1,340 @@
+@import "bourbon/bourbon.scss"
+@import "neat/neat.scss"
+
+$roboto: 'Roboto',sans-serif
+$logo: (columns: 2,gutter:0px)
+$gradients: (columns: 4, gutter: 5rem)
+$phone: (columns: 2, gutter: 2em, media: '(max-width: 786px)')
+
+body
+  margin: 0
+  overflow-x: hidden
+  background-color: #222
+
+.main-back
+  width: 100%
+  height: 100%
+  background: #222
+  transition: 0.4s
+
+.white-theme
+  background-color: #dddddd
+
+.black-text
+  color: #222222
+
+.black-back
+  background-color: #151515
+
+.head
+  width: 100%
+  height: 40vh
+  //background: #555
+  position: relative
+  @include grid-container
+  //@include grid-visual()
+
+.logo-box
+  @include grid-column(2)
+  @include grid-shift(1)
+  //@include grid-visual()
+  font-family: $roboto
+  font-size: 1.2em
+  font-weight: 600
+  //text-transform: uppercase
+  color: #f5f5f5
+  letter-spacing: 0.08em
+  +position(absolute, 50% null null 15%)
+  +transform(translate(-50%,-50%))
+  z-index: 7
+
+.row-1,.row-2
+  @include grid-column(2,$logo)
+  position: relative
+  //@include grid-visual()
+
+.rect-box
+  @include grid-column(1,$logo)
+  width: 20%
+  height: 70%
+  +position(absolute,50% null null 10%)
+  +transform(translate(-50%,-50%))
+  background-color: #f5f5f5
+  cursor: pointer
+  transition: 0.4s
+
+#ui
+  margin: 0
+  @include grid-column(1,$logo)
+  @include grid-shift(1,$logo)
+  margin-left: -20%
+  font-size: 1.3em
+  transition: 0.4s
+
+#head-low-text
+  padding-top: 5%
+  @include grid-column(2,$logo)
+  font-size: 1.3em
+  transition: 0.4s
+
+.gradients
+  width: 100%
+  height: 100vh
+  //background: #444
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.rows
+  width: 90%
+  height: 50%
+  @include grid-container
+
+.boxc
+  @include grid-column(1,$gradients)
+  position: relative
+  height: 100%
+  margin-bottom: 10%
+  @include grid-media($phone)
+    @include grid-column(1,$phone)
+    height: 70%
+
+.box
+  cursor: pointer
+
+.grad-title
+  font-family: $roboto
+  font-size: 0.8em
+  letter-spacing: 0.08em
+  color: #f5f5f5
+  height: 20%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  text-transform: capitalize
+  transition: 0.4s
+
+.box
+  width: 100%
+  height: 80%
+  //background: #777
+  position: relative
+
+.grad-border
+  +position(absolute)
+  z-index: 6
+  width: 100%
+  height: 100%
+  border: 1px #f5f5f5 solid
+
+.grad
+  +position(absolute, 3% null null 4%)
+  z-index: 4
+  width: 101%
+  height: 101%
+  @include linear-gradient(#ec008c,#fc6767)
+  box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.61)
+
+.copy-option
+  width: 101%
+  height: 101%
+  +position(absolute)
+  z-index: 5
+  background-color: #ddd
+  opacity: 0
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  transition: 0.4s
+  span
+    text-transform: uppercase
+    font-family: $roboto
+    font-size: 0.8em
+    letter-spacing: 0.08em
+
+.pop-up
+  +position(fixed,50% null null 50%)
+  +transform(translate(-50%,-50%))
+  z-index: 999
+  width: 50%
+  height: 50%
+  background: #333
+  box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.34)
+
+.pp-heading
+  width: 100%
+  height: 30%
+  font-size: 3em
+  padding: 10px
+  font-family: 'roboto',sans-serif
+  letter-spacing: 0.1em
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-transform: capitalize
+  color: #ddd
+
+.pp-code
+  width: 80%
+  height: 70%
+  color: black
+  display: flex
+  padding: 0% 10%
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  font-family: monospace
+  font-size: 1em
+  text-align: center
+  color: #ddd
+  margin-top: -5%
+
+.close-btn
+  +position(absolute, 0% 0% null null)
+  padding: 10px
+
+.material-icons
+  cursor: pointer
+  font-size: 32px
+  color: #ddd
+
+.hidden
+  display: none
+
+::selection
+  color: #151515
+  background: #ddd
+
+.grad-1
+  @include linear-gradient(19deg,#3C3B3F,#605C3C)
+.grad-2
+  @include linear-gradient(19deg,#800080,#ffc0cb)
+.grad-3
+  @include linear-gradient(19deg,#fc4a1a,#f7b733)
+.grad-4
+  @include linear-gradient(19deg,#74ebd5,#ACB6E5)
+.grad-5
+  @include linear-gradient(19deg,#03001e,#7303c0,#ec38bc,#fdeff9)
+.grad-6
+  @include linear-gradient(19deg,#22c1c3,#fdbb2d)
+.grad-7
+  @include linear-gradient(19deg,#ff9966,#ff5e62)
+.grad-8
+  @include linear-gradient(19deg,#7F00FF,#E100FF)
+.grad-9
+  @include linear-gradient(19deg,#C9D6FF,#E2E2E2)
+.grad-10
+  @include linear-gradient(19deg,#d9a7c7,#fffcdc)
+.grad-11
+  @include linear-gradient(19deg,#0cebeb,#20e3b2,#29ffc6)
+.grad-12
+  @include linear-gradient(19deg,#642B73,#C6426E)
+.grad-13
+  @include linear-gradient(19deg,#CB356B,#BD3F32)
+.grad-14
+  @include linear-gradient(19deg,#3A1C71,#D76D77,#FFAF7B)
+.grad-15
+  @include linear-gradient(19deg,#283c86,#45a247)
+.grad-16
+  @include linear-gradient(19deg,#c0392b,#8e44ad)
+.grad-17
+  @include linear-gradient(19deg,#159957,#155799)
+.grad-18
+  @include linear-gradient(19deg,#F2994A,#F2C94C)
+.grad-19
+  @include linear-gradient(19deg,#E44D26,#F16529)
+.grad-20
+  @include linear-gradient(19deg,#B2FEFA,#0ED2F7)
+.grad-21
+  @include linear-gradient(19deg,#C33764,#1D2671)
+.grad-22
+  @include linear-gradient(19deg,#200122,#6f0000)
+.grad-23
+  @include linear-gradient(19deg,#4568DC,#B06AB3)
+.grad-24
+  @include linear-gradient(19deg,#B06AB3,#F8FFAE)
+.grad-25
+  @include linear-gradient(19deg,#FFAFBD,#ffc3a0)
+.grad-26
+  @include linear-gradient(19deg,#DCE35B,#45B649)
+.grad-27
+  @include linear-gradient(19deg,#3494E6,#EC6EAD)
+.grad-28
+  @include linear-gradient(19deg,#ee0979,#ff6a00)
+.grad-29
+  @include linear-gradient(19deg,#CF8BF3,#FDB99B)
+.grad-30
+  @include linear-gradient(19deg,#f4c4f3,#fc67fa)
+.grad-31
+  @include linear-gradient(19deg,#ff00cc,#333399)
+.grad-32
+  @include linear-gradient(19deg,#ff7e5f,#feb47b)
+.grad-33
+  @include linear-gradient(19deg,#cb2d3e,#ef473a)
+.grad-34
+  @include linear-gradient(19deg,#42275a,#734b6d)
+.grad-35
+  @include linear-gradient(19deg,#ffd89b,#19547b)
+.grad-36
+  @include linear-gradient(19deg,#FF5F6D,#FFC371)
+.grad-37
+  @include linear-gradient(19deg,#EECDA3,#EF629F)
+.grad-38
+  @include linear-gradient(19deg,#000000,#434343)
+.grad-39
+  @include linear-gradient(19deg,#fd746c,#ff9068)
+.grad-40
+  @include linear-gradient(19deg,#6a3093,#a044ff)
+.grad-41
+  @include linear-gradient(19deg,#B24592,#F15F79)
+.grad-42
+  @include linear-gradient(19deg,#00C9FF,#92FE9D)
+.grad-43
+  @include linear-gradient(19deg,#f46b45,#eea849)
+.grad-44
+  @include linear-gradient(19deg,#e53935,#e35d5b)
+.grad-45
+  @include linear-gradient(19deg,#fc00ff,#00dbde)
+.grad-46
+  @include linear-gradient(19deg,#ee9ca7,#ffdde1)
+.grad-47
+  @include linear-gradient(19deg,#ff0084,#33001b)
+.grad-48
+  @include linear-gradient(19deg,#FEAC5E,#C779D0,#4BC0C8)
+.grad-49
+  @include linear-gradient(19deg,#FDFC47,#24FE41)
+.grad-50
+  @include linear-gradient(19deg,#DE6262,#FFB88C)
+.grad-51
+  @include linear-gradient(19deg,#d53369,#cbad6d)
+.grad-52
+  @include linear-gradient(19deg,#f857a6,#ff5858)
+.grad-53
+  @include linear-gradient(19deg,#e43a15,#e65245)
+.grad-54
+  @include linear-gradient(19deg,#EC6F66,#F3A183)
+.grad-55
+  @include linear-gradient(19deg,#ECE9E6,#FFFFFF)
+.grad-56
+  @include linear-gradient(19deg,#ED4264,#FFEDBC)
+.grad-57
+  @include linear-gradient(19deg,#1CD8D2,#93EDC7)
+.grad-58
+  @include linear-gradient(19deg,#4776E6,#8E54E9)
+.grad-59
+  @include linear-gradient(19deg,#FF8008,#FFC837)
+.grad-60
+  @include linear-gradient(19deg,#EB3349,#F45C43)
+.grad-61
+  @include linear-gradient(19deg,#4CB8C4,#3CD3AD)
+.grad-62
+  @include linear-gradient(19deg,#FF512F,#DD2476)
+.grad-63
+  @include linear-gradient(19deg,#DA22FF,#9733EE)
+.grad-64
+  @include linear-gradient(19deg,#D31027,#EA384D)
+.grad-65
+  @include linear-gradient(19deg,#ec008c,#fc6767)
